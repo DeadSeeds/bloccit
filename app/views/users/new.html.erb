@@ -22,11 +22,11 @@
         <% f.label :email %>
         <% f.text_field :email, class: 'form-control', placeholder: "Email address" %>
       <% end %>
-      <% form_group_tag(@user.errors[:password]) do %>
+      <%= form_group_tag(@user.errors[:password]) do %>
         <% f.label :password %>
         <% f.text_field :password, class: 'form-control', placeholder: "Enter a password" %>
       <% end %>
-      <% form_group_tag(@user.errors[:password]) do %>
+      <%= form_group_tag(@user.errors[:password]) do %>
         <% f.label :password_confirmation %>
         <% f.text_field :password_confirmation, class: 'form-control', placeholder: "Confirm your password" %>
       <% end %>
