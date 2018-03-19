@@ -22,5 +22,5 @@ RSpec.describe Vote, type: :model do
       vote.save!
     end
   end
-  
+
 end
