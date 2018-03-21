@@ -1,0 +1,7 @@
+You're following a new post: "<%= @post.title %>"
+
+By: <%= @post.user.name %>
+
+<%= @post.body %>
+
+Visit online at: <%= topic_post_url(@post.topic, @post) %>
