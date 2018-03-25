@@ -11,7 +11,7 @@ RSpec.describe Topic, type: :model do
 
   describe "attributes" do
     it "has name, description, and public attributes" do
-      expect(topic).to have_attributes(name: name, description: description, public: public)
+      expect(topic).to have_attributes(name: topic.name, description: topic.description, public: public)
     end
 
     it "is public by default" do
