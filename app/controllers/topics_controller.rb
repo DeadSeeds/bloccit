@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic = Topic.includes(posts: :user).find(params[:id])
   end
 
   def new

@@ -18,9 +18,35 @@
     </div>
   </div>
 </div>
+<div>
+  <% if detect_post %>
+    <h3>  <%="#{@user.name} has not submitted any posts yet." %> </h3>
+  <% else %>
+    <h2>Posts</h2>
+    <%= render @user.posts %>
+  <% end %>
 
-<h2>Posts</h2>
-<%= render @user.posts %>
+  <% if detect_comment %>
+    <h3>  <%="#{@user.name} has not made any comments yet." %> </h3>
+  <% else %>
+    <h2>Comments</h2>
+    <%= render @user.comments %>
+  <% end %>
+</div>
+<div class="row">
+  <div class="col-md-8">
+  <% @user.favorite_posts.each do |fave_post| %>
+    <div>
+      <div>
+        <h4>Favorited Posts:</h4>
+        <%= image_tag fave_post.user.avatar_url(40) %>
+        <%= link_to fave_post.title, topic_post_path(fave_post.topic_id, fave_post.id) %>
+        Vote Total: <%= fave_post.votes.sum(:value) %>
+        Comments:  <%= fave_post.comments.count %>
 
-<h2>Comments</h2>
-<%= render @user.comments %>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
