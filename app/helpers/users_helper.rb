@@ -1,13 +1,13 @@
 module UsersHelper
   def detect_post
     if @user.posts.count == 0
-      p ""
+      true
     end
   end
 
   def detect_comment
     if @user.comments.count == 0
-      p ""
+      true
     end
     #binding.pry
   end
